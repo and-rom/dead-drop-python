@@ -106,12 +106,12 @@ APP = Flask(__name__)
 @APP.route("/")
 def index():
     """ just return the index template"""
-    return render_template('index.htm', timedKey=HANDLER.get_timed_key())
+    return render_template('index.htm', timedKey=HANDLER.get_timed_key(), path=".")
 
 @APP.route("/stats")
 def statsindex():
     """ just return the stats"""
-    return render_template('stats.htm')
+    return render_template('stats.htm', path=".")
 
 
 @APP.route("/stats/json")
@@ -148,7 +148,7 @@ def drop():
 @APP.route("/pickup/<drop_id>")
 def pickup_drop_index(drop_id):
     """Load the pickup HTML"""
-    return render_template('index.htm', id=drop_id)
+    return render_template('index.htm', id=drop_id, path="..")
 
 
 @APP.route("/getdrop.php?id=<drop_id>")
@@ -160,4 +160,4 @@ def pickup_drop_json(drop_id):
 
 @APP.errorhandler(500)
 def internal_server_error(e):
-    return render_template('error.htm'), 500
+    return render_template('error.htm', path="."), 500

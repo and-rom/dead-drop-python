@@ -9,13 +9,13 @@ var root;
 var domain;
 
 
-function setDrop() {
+function setDrop(path) {
 
     "use strict";
 
     var text = symmetricEncrypt();
 
-    $.post("/drop", { data: text }, function (data) {
+    $.post(path+"/drop", { data: text }, function (data) {
 
         $("#MakeDrop").hide(300, function () {
             var id = data.id;
@@ -33,16 +33,16 @@ function setDrop() {
 
     }).fail(function () {
 
-        alert("Something went wrong. Unable to create drop.");
+        alert("Что-то пошло не так. Невозможно создать тайник.");
         window.location.assign(getHost());
     });
 
-    
+
 
 }
 
 
-function getDrop() {
+function getDrop(path) {
 
     if (typeof dropid == 'undefined') {
         alert('no drop found');
@@ -50,7 +50,7 @@ function getDrop() {
     }
 
     $.ajax({
-        url: '/drop/'+dropid,
+        url: path+'/drop/'+dropid,
         success: function (data) {
 
             if (data == null) {
@@ -103,7 +103,7 @@ function makePwd() {
 
 function buildUrl(id) {
     host = getHost()
-    var final = host.concat("/pickup/");
+    var final = host.concat("pickup/");
     var final = final.concat(id);
     return final;
 }
@@ -115,6 +115,9 @@ function getHost(){
     var host = slashes.concat(window.location.hostname);
     if (window.location.port != "") {
        host = host.concat(":").concat(window.location.port);
+    }
+    if (window.location.pathname != "") {
+       host = host.concat(window.location.pathname);
     }
 
     return host
