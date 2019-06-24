@@ -69,7 +69,7 @@ function getDrop(path) {
 
     }).fail(function () {
 
-        alert("Something went wrong. Unable to get drop.");
+        alert("Что-то пошло не так. Невозможно получить тайник.");
         window.location.assign(getHost());
         
     });
