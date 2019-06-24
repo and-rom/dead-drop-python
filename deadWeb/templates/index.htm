@@ -43,85 +43,85 @@
     <form>
         <div class="container">
             <div class=" page-header">
-                
-                <h1>One Time Dead Drop</h1>
-                <p class="intro-text">Need to send some data securely? Password? Love Note? Haiku? This is the place.</p>
+
+                <h1>Одноразовый тайник</h1>
+                <p class="intro-text">Нужно безопасно передать какую-то информацию? Пароль? Любовную записку? Хайку? Это то самое место.</p>
             </div>
             <!-- end header -->
 
             <div id="MakeDrop">
                 <div class="arrow_box arrow_box_info">
-                    <p>Enter the message that you'd like to send to someone.</p>
+                    <p>Введите сообщение, которое вы хотите кому-то отправить.</p>
                 </div>
                 <div class="panel-body">
-                    <textarea name="message" id="message" placeholder="Enter your message" class="form-control input-lg" rows="11"></textarea>
+                    <textarea name="message" id="message" placeholder="Введите ваше сообщение" class="form-control input-lg" rows="11"></textarea>
                 </div>
-                <button type="button" class="btn btn-lg btn-primary" onclick="setDrop()">Make the drop!</button>
+                <button type="button" class="btn btn-lg btn-primary" onclick="setDrop()">Сделать тайник!</button>
             </div>
             <!-- end make your drop -->
 
 
             <div id="DropComplete">
                 <div class="alert-success arrow_box arrow_box_success">
-                    <h2>Drop made!</h2>
-                    <p>You need to copy and send the message below to the person you want to pick up this drop. Note, for added security, send the password separate from the link.</p>
+                    <h2>Тайник сделан!</h2>
+                    <p>Вам нужно скопировать и отправить приведенное ниже сообщение человеку, которому вы хотите передать это тайник. Обратите внимание, для дополнительной безопасности отправьте пароль отдельно от ссылки.</p>
                 </div>
                 <div class="panel-body">
                     <div class="drop-complete">
                         <p class="intro-text">
-                            Hi,<br />
-                            I'm sending you some secure information.<br />
+                            Привет,<br />
+                            Я посылаю вам некоторую защищенную информацию.<br />
                         </p>
                         <div class="well location-well">
-                            Location: <span id="url"></span><br /><br />        
-                            Password: <span id="pass"></span>
+                            Ссылка: <span id="url"></span><br /><br />
+                            Пароль: <span id="pass"></span>
                         </div>
 
                         <div class="warning">
-                            <p>Warning!</p>
+                            <p>Предупреждение!</p>
                             <ul>
-                                <li>This drop will ONLY work once, so be careful with the password, and make sure to copy the data immediately.</li>
-                                <li>After you pick it up, the data will self destruct and this link won't work anymore.</li>
-                                <li>This link will only work for 24 hours, so please check shortly.</li>
+                                <li>Этот тайник будет работать ТОЛЬКО один раз, поэтому будьте осторожны с паролем и обязательно скопируйте данные немедленно.</li>
+                                <li>После того, как вы его откроете, данные самоуничтожатся, и эта ссылка больше не будет работать.</li>
+                                <li>Эта ссылка будет работать только в течение 24 часов, поэтому, пожалуйста, проверьте в ближайшее время.</li>
                             </ul>
                         </div>
                             
                     </div>
                     
                 </div>
-                <button type="button" class="btn btn-lg btn-primary" onclick="window.location.assign(getHost())">Make another  Drop</button>
+                <button type="button" class="btn btn-lg btn-primary" onclick="window.location.assign(getHost())">Сделать другой тайник</button>
             </div>
             <!-- end drop complete -->
 
 
             <div id="RetrieveDrop">
                 <div class="arrow_box arrow_box_info">
-                    <h2>Enter the password</h2>
-                    <p>This will only work once! Clicking <strong>'Get The Drop'</strong> will delete the message permanently.</p>
+                    <h2>Введите пароль</h2>
+                    <p>Это сработает только один раз! Нажатие <strong>'Открыть тайник'</strong> удалит сообщение навсегда.</p>
                 </div>
                 <div class="panel-body">
-                    <input type="text" id="password" class="form-control input-lg" placeholder="Enter your password here" size="25" />
+                    <input type="text" id="password" class="form-control input-lg" placeholder="Введите свой пароль здесь" size="25" />
                 </div>
-                <button type="button" class="btn btn-lg btn-primary" onclick="getDrop()">Get The Drop</button>
+                <button type="button" class="btn btn-lg btn-primary" onclick="getDrop()">Открыть тайник</button>
             </div>
             <!-- end retrieve your drop -->
 
 
             <div id="DisplayDrop">
                 <div class="alert-success arrow_box arrow_box_success">
-                    <h2>Success!</h2>
-                    <p>Your decrypted message is below. This message has been deleted, you will not be able to retrieve it again.</p>
+                    <h2>Успешно!</h2>
+                    <p>Ваше расшифрованное сообщение ниже. Это сообщение было удалено, вы не сможете восстановить его снова.</p>
                 </div>
                 <div class="panel-body">
                     <pre id="decrypted" />
                 </div>
-                <button type="button" class="btn btn-lg btn-primary" onclick="window.location.assign(getHost())">Make your own Drop</button>
+                <button type="button" class="btn btn-lg btn-primary" onclick="window.location.assign(getHost())">Сделай свой собственный тайник</button>
             </div>
             <!-- end display dead drop -->
 
 
             <br /><br />
-            <a href="#demo" data-toggle="collapse">Is this safe?</a>
+            <a href="#demo" data-toggle="collapse">Это безопасно?</a>
 
             <div id="demo" class="collapse">
                 <p>Here's why your message is safe:</p>
