@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta property="og:image" content="{{ path }}/images/Skull_big.jpg" />
+    <meta property="og:image" content="{{ url_for('send_images', path='Skull_big.jpg') }}" />
     <meta name="author" content="bill@bigmojo.net">
     <meta name="robots" content="index, follow">
     <meta name="revisit-after" content="3 month">
@@ -24,11 +24,11 @@
 
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="{{ path }}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ url_for('send_css', path='bootstrap.min.css') }}" />
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="{{ path }}/css/bootstrap-theme.min.css" /><link rel="stylesheet" href="{{ path }}/css/deaddrop.css" />
-    <link rel="shortcut icon" href="{{ path }}/images/Skull_big.jpg">
+    <link rel="stylesheet" href="{{ url_for('send_css', path='bootstrap-theme.min.css') }}" /><link rel="stylesheet" href="{{ url_for('send_css', path='deaddrop.css') }}" />
+    <link rel="shortcut icon" href="{{ url_for('send_images', path='Skull_big.jpg') }}">
 
 
     <script>
@@ -43,7 +43,7 @@
     <form>
         <div class="container">
             <div class=" page-header">
-
+                
                 <h1>Одноразовый тайник</h1>
                 <p class="intro-text">Нужно безопасно передать какую-то информацию? Пароль? Любовную записку? Хайку? Это то самое место.</p>
             </div>
@@ -56,7 +56,7 @@
                 <div class="panel-body">
                     <textarea name="message" id="message" placeholder="Введите ваше сообщение" class="form-control input-lg" rows="11"></textarea>
                 </div>
-                <button type="button" class="btn btn-lg btn-primary" onclick="setDrop('{{ path }}')">Сделать тайник!</button>
+                <button type="button" class="btn btn-lg btn-primary" onclick="setDrop('{{ url_for('drop') }}')">Сделать тайник!</button>
             </div>
             <!-- end make your drop -->
 
@@ -73,7 +73,7 @@
                             Я посылаю вам некоторую защищенную информацию.<br />
                         </p>
                         <div class="well location-well">
-                            Ссылка: <span id="url"></span><br /><br />
+                            Ссылка: <span id="url"></span><br /><br />        
                             Пароль: <span id="pass"></span>
                         </div>
 
@@ -89,7 +89,7 @@
                     </div>
                     
                 </div>
-                <button type="button" class="btn btn-lg btn-primary" onclick="window.location.assign(getHost())">Сделать другой тайник</button>
+                <button type="button" class="btn btn-lg btn-primary" onclick="window.location.assign('{{ url_for('index') }}')">Сделать другой тайник</button>
             </div>
             <!-- end drop complete -->
 
@@ -102,7 +102,7 @@
                 <div class="panel-body">
                     <input type="text" id="password" class="form-control input-lg" placeholder="Введите свой пароль здесь" size="25" />
                 </div>
-                <button type="button" class="btn btn-lg btn-primary" onclick="getDrop('{{ path }}')">Открыть тайник</button>
+                <button type="button" class="btn btn-lg btn-primary" onclick="getDrop('{{ url_for('drop') }}')">Открыть тайник</button>
             </div>
             <!-- end retrieve your drop -->
 
@@ -115,7 +115,7 @@
                 <div class="panel-body">
                     <pre id="decrypted" />
                 </div>
-                <button type="button" class="btn btn-lg btn-primary" onclick="window.location.assign(getHost())">Сделай свой собственный тайник</button>
+                <button type="button" class="btn btn-lg btn-primary" onclick="window.location.assign('{{ url_for('index') }}')">Сделай свой собственный тайник</button>
             </div>
             <!-- end display dead drop -->
 
@@ -156,8 +156,8 @@
                 <h2>Want to help pay the bills?</h2>
 
             <p class="intro-text">
-                <img src="{{ path }}/images/icon_bitcoin.png" alt="bitcoin">: 12hKGoUhULXQvcG8Lfboy9UE4fS9YtUwwy<br>
-                <img src="{{ path }}/images/icon_litecoin.png" alt="litecoin">: LUeNp4gjN85cnp7VqBtLto9x4raxV5MjMK
+                <img src="{{ url_for('send_images', path='icon_bitcoin.png') }}" alt="bitcoin">: 12hKGoUhULXQvcG8Lfboy9UE4fS9YtUwwy<br>
+                <img src="{{ url_for('send_images', path='icon_litecoin.png') }}" alt="litecoin">: LUeNp4gjN85cnp7VqBtLto9x4raxV5MjMK
             </p>
             </div>
             <!-- end 'is this safe' -->
@@ -170,17 +170,17 @@
     <!-- Bootstrap core JavaScript
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{ path }}/js/jquery.min.js"></script>
+    <script src="{{ url_for('send_js', path='jquery.min.js') }}"></script>
     <!-- Latest compiled and minified JavaScript -->
-    <script src="{{ path }}/js/bootstrap.min.js"></script>
-    <script src="{{ path }}/js/sjcl.js"></script>
+    <script src="{{ url_for('send_js', path='bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('send_js', path='sjcl.js') }}"></script>
     <script>
       var s = document.createElement('script');
 
-      var src = "{{ path }}/js/deaddrop.js?cacheBreak="+Math.floor((Math.random() * 1000000) + 1);
+      var src = "{{ url_for('send_js', path='deaddrop.js') }}?cacheBreak="+Math.floor((Math.random() * 1000000) + 1);
       s.setAttribute('src',src);
       document.body.appendChild( s );
     </script>
-    <script src="{{ path }}/js/merseen.js"></script>
+    <script src="{{ url_for('send_js', path='merseen.js') }}"></script>
 </body>
 </html>

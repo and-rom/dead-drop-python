@@ -15,7 +15,7 @@ function setDrop(path) {
 
     var text = symmetricEncrypt();
 
-    $.post(path+"/drop", { data: text }, function (data) {
+    $.post(path, { data: text }, function (data) {
 
         $("#MakeDrop").hide(300, function () {
             var id = data.id;
@@ -37,7 +37,7 @@ function setDrop(path) {
         window.location.assign(getHost());
     });
 
-
+    
 
 }
 
@@ -50,7 +50,7 @@ function getDrop(path) {
     }
 
     $.ajax({
-        url: path+'/drop/'+dropid,
+        url: path + "/" + dropid,
         success: function (data) {
 
             if (data == null) {
