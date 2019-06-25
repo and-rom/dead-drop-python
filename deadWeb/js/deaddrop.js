@@ -33,8 +33,16 @@ function setDrop(path) {
 
     }).fail(function () {
 
-        alert("Что-то пошло не так. Невозможно создать тайник.");
-        window.location.assign(getHost());
+        $.toast({ 
+            heading : "<b>Oops...</b>",
+            text : "Something went wrong. Unable to create the message.", 
+            showHideTransition : 'slide',
+            allowToastClose : false,
+            hideAfter : 5000,
+            textAlign : 'left',
+            position : 'top-right'
+        });
+        //window.location.assign(getHost());
     });
 
     
@@ -69,8 +77,16 @@ function getDrop(path) {
 
     }).fail(function () {
 
-        alert("Что-то пошло не так. Невозможно получить тайник.");
-        window.location.assign(getHost());
+        $.toast({ 
+            heading : "<b>Oops...</b>",
+            text : "Something went wrong. Unable to get the message.", 
+            showHideTransition : 'slide',
+            allowToastClose : false,
+            hideAfter : 5000,
+            textAlign : 'left',
+            position : 'top-right'
+        });
+        //window.location.assign(getHost());
         
     });
 }
@@ -132,7 +148,16 @@ function symmetricEncrypt() {
 
         return crypt;
     } catch (err) {
-        alert('Error encrypting data');
+        $.toast({ 
+            heading : "<b>Oops...</b>",
+            text : "Error encrypting data", 
+            showHideTransition : 'slide',
+            allowToastClose : false,
+            hideAfter : 5000,
+            textAlign : 'left',
+            position : 'top-right'
+        });
+        //alert('Error encrypting data');
         return false;
     }
 }
@@ -148,8 +173,16 @@ function symmetricDecrypt(data) {
         return sjcl.decrypt(pw, data);
 
     } catch (err) {
-        alert('Error decrypting data');
-        window.location.assign("/");
+        $.toast({ 
+            heading : "<b>Oops...</b>",
+            text : "Error decrypting data", 
+            showHideTransition : 'slide',
+            allowToastClose : false,
+            hideAfter : 5000,
+            textAlign : 'left',
+            position : 'top-right'
+        });
+        //window.location.assign("/");
         return false;
     }
 }
