@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta property="og:image" content="/images/Skull_big.jpg" />
+    <meta property="og:image" content="{{ url_for('send_images', path='Skull_big.jpg') }}" />
     <meta name="author" content="bill@bigmojo.net">
     <meta name="robots" content="index, follow">
     <meta name="revisit-after" content="3 month">
@@ -24,11 +24,11 @@
 
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ url_for('send_css', path='bootstrap.min.css') }}" />
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" /><link rel="stylesheet" href="/css/deaddrop.css" />
-    <link rel="shortcut icon" href="/images/Skull_big.jpg">
+    <link rel="stylesheet" href="{{ url_for('send_css', path='bootstrap-theme.min.css') }}" /><link rel="stylesheet" href="{{ url_for('send_css', path='deaddrop.css') }}" />
+    <link rel="shortcut icon" href="{{ url_for('send_images', path='Skull_big.jpg') }}">
 
 
     <script>
@@ -156,8 +156,8 @@
                 <h2>Want to help pay the bills?</h2>
 
             <p class="intro-text">
-                <img src="/images/icon_bitcoin.png" alt="bitcoin">: 12hKGoUhULXQvcG8Lfboy9UE4fS9YtUwwy<br>
-                <img src="/images/icon_litecoin.png" alt="litecoin">: LUeNp4gjN85cnp7VqBtLto9x4raxV5MjMK
+                <img src="{{ url_for('send_images', path='icon_bitcoin.png') }}" alt="bitcoin">: 12hKGoUhULXQvcG8Lfboy9UE4fS9YtUwwy<br>
+                <img src="{{ url_for('send_images', path='icon_litecoin.png') }}" alt="litecoin">: LUeNp4gjN85cnp7VqBtLto9x4raxV5MjMK
             </p>
             </div>
             <!-- end 'is this safe' -->
@@ -170,17 +170,17 @@
     <!-- Bootstrap core JavaScript
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/jquery.min.js"></script>
+    <script src="{{ url_for('send_js', path='jquery.min.js') }}"></script>
     <!-- Latest compiled and minified JavaScript -->
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/sjcl.js"></script>
+    <script src="{{ url_for('send_js', path='bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('send_js', path='sjcl.js') }}"></script>
     <script>
       var s = document.createElement('script');
 
-      var src = "/js/deaddrop.js?cacheBreak="+Math.floor((Math.random() * 1000000) + 1);
+      var src = "{{ url_for('send_js', path='deaddrop.js') }}?cacheBreak="+Math.floor((Math.random() * 1000000) + 1);
       s.setAttribute('src',src);
       document.body.appendChild( s );
     </script>
-    <script src="/js/merseen.js"></script>
+    <script src="{{ url_for('send_js', path='merseen.js') }}"></script>
 </body>
 </html>
