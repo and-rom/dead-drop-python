@@ -34,8 +34,8 @@ function setDrop(path) {
     }).fail(function () {
 
         $.toast({ 
-            heading : "<b>Oops...</b>",
-            text : "Something went wrong. Unable to create the message.", 
+            heading : "<b>Ой!</b>",
+            text : "Что-то пошло не так. Невозможно создать тайник.", 
             showHideTransition : 'slide',
             allowToastClose : false,
             hideAfter : 5000,
@@ -78,8 +78,8 @@ function getDrop(path) {
     }).fail(function () {
 
         $.toast({ 
-            heading : "<b>Oops...</b>",
-            text : "Something went wrong. Unable to get the message.", 
+            heading : "<b>Ой!</b>",
+            text : "Что-то пошло не так. Невозможно получить тайник.", 
             showHideTransition : 'slide',
             allowToastClose : false,
             hideAfter : 5000,
@@ -149,8 +149,8 @@ function symmetricEncrypt() {
         return crypt;
     } catch (err) {
         $.toast({ 
-            heading : "<b>Oops...</b>",
-            text : "Error encrypting data", 
+            heading : "<b>Ой!</b>",
+            text : "Ошибка шифрования данных", 
             showHideTransition : 'slide',
             allowToastClose : false,
             hideAfter : 5000,
@@ -174,8 +174,8 @@ function symmetricDecrypt(data) {
 
     } catch (err) {
         $.toast({ 
-            heading : "<b>Oops...</b>",
-            text : "Error decrypting data", 
+            heading : "<b>Ой!</b>",
+            text : "Ошибка расшифровки данных", 
             showHideTransition : 'slide',
             allowToastClose : false,
             hideAfter : 5000,
