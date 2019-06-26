@@ -70,7 +70,7 @@ class DropHandler:
     def pickup(self, drop_id):
         document = self.client.drop.find_one_and_delete({"key" :drop_id})
 
-        if (document == []):
+        if document is None:
             return []
 
         # handle old drops without createdDate
