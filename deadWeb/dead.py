@@ -17,10 +17,10 @@ class DropHandler:
         self.client = db.dead
         try:
             """ set time to live on the documents in a collection """
-            self.client.dead.create_index([("createdDate", ASCENDING)], expireAfterSeconds=expireAfterSeconds)
+            self.client.drop.create_index([("createdDate", ASCENDING)], expireAfterSeconds=expireAfterSeconds)
         except pymongo.errors.OperationFailure:
             """ assume "already exists with different options", we need to modify the existing ttl """
-            self.client.command("collMod", "dead", index={"keyPattern": {"createdDate": 1} , "expireAfterSeconds": expireAfterSeconds})
+            self.client.command("collMod", "drop", index={"keyPattern": {"createdDate": 1} , "expireAfterSeconds": expireAfterSeconds})
 
     def get_timed_key(self):
         drop_id = uniqid.uniqid()
