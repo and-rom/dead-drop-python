@@ -1,7 +1,8 @@
 from datetime import datetime
 import os
 from flask import Flask, render_template, send_from_directory, request, Response, jsonify
-from pymongo import MongoClient, errors
+from pymongo import MongoClient, errors, ASCENDING
+import pymongo.errors
 import uniqid
 import hashlib
 import json
@@ -12,9 +13,14 @@ class DropHandler:
     clientHash = None
     salt = "a6891cca-3ea1-4f56-b3a8-1d77095a088e"
     
-    def __init__(self, db):
+    def __init__(self, db, expireAfterSeconds=86400):
         self.client = db.dead
-        pass
+        try:
+            """ set time to live on the documents in a collection """
+            self.client.dead.create_index([("createdDate", ASCENDING)], expireAfterSeconds=expireAfterSeconds)
+        except pymongo.errors.OperationFailure:
+            """ assume "already exists with different options", we need to modify the existing ttl """
+            self.client.command("collMod", "dead", index={"keyPattern": {"createdDate": 1} , "expireAfterSeconds": expireAfterSeconds})
 
     def get_timed_key(self):
         drop_id = uniqid.uniqid()
@@ -66,19 +72,11 @@ class DropHandler:
 
         if document is None:
             return []
-        
-        self.client.track.update({"key" :drop_id},{"$set":{"pickedUp":datetime.now()},"$unset":{"key":""}})
 
-        #handle old drops without createdDate
+        # handle old drops without createdDate
         if "createdDate" in document:
-            # Do not return drops > 24 hours old
-            time_delta = datetime.now()  - document["createdDate"]
-
-            if time_delta.days > 1:
-                # "too old, returning None"
-                return []
-            else:
-                return document["data"]
+            self.client.track.update({"key" :drop_id},{"$set":{"pickedUp":datetime.now()},"$unset":{"key":""}})
+            return document["data"]
         else:
             # no create date, no drop for you
             return []
@@ -98,7 +96,7 @@ class DropHandler:
         self.clientHash = m.hexdigest()[:32]
 
 
-HANDLER = DropHandler(MongoClient(connectTimeoutMS=5000,serverSelectionTimeoutMS=5000))
+HANDLER = DropHandler(MongoClient(connectTimeoutMS=5000, serverSelectionTimeoutMS=5000), expireAfterSeconds=7*86400)
 
 
 APP = Flask(__name__)
