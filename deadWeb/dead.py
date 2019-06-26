@@ -106,7 +106,7 @@ APP = Flask(__name__)
 @APP.route("/")
 def index():
     """ just return the index template"""
-    return render_template('index.htm', timedKey=HANDLER.get_timed_key(), path=".")
+    return render_template('index.htm', timedKey=HANDLER.get_timed_key())
 
 @APP.route("/stats")
 def statsindex():
