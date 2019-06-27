@@ -55,7 +55,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">AndRom</a>
+          <a class="navbar-brand" href="/index.html">AndRom</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
           <ul class="nav navbar-nav">
@@ -63,23 +63,23 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Сервисы <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="pwgen.html">Генератор паролей</a></li>
-                <li class="active"><a href="deaddrop/">Одноразовый тайник</a></li>
-                <li><a href="icecast.html">Сейчас играет...</a></li>
-                <li><a href="tpvs/">TPVS</a></li>
+                <li><a href="/pwgen.html">Генератор паролей</a></li>
+                <li class="active"><a href="/deaddrop/">Одноразовый тайник</a></li>
+                <li><a href="/icecast.html">Сейчас играет...</a></li>
+                <li><a href="/tpvs/">TPVS</a></li>
             </ul>
-            <li><a href="about.html">Подробнее</a></li>
-            <li><a href="contact.html">Контакты</a></li>
+            <li><a href="/about.html">Подробнее</a></li>
+            <li><a href="/contact.html">Контакты</a></li>
           </ul>
-          <p class="navbar-text navbar-right">Github <a href="https://github.com/and-rom" class="navbar-link"><img src="./img/GitHub-Mark-32px.png" heght="20px" width="20px">and-rom</a></p>
+          <p class="navbar-text navbar-right">Github <a href="https://github.com/and-rom" class="navbar-link"><img src="/img/GitHub-Mark-32px.png" heght="20px" width="20px">and-rom</a></p>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <!-- Begin page content -->
     <div class="container">
-        <div class=" page-header">
-            <p class="intro-text">Нужно безопасно передать какую-то информацию? Это то самое место.</p>
+        <div class="page-header">
+            <h3>Нужно безопасно передать какую-то информацию? Это то самое место.</h3>
         </div>
         <!-- end header -->
 
@@ -98,12 +98,12 @@
 
             <div id="DropComplete">
                 <div class="alert-success arrow_box arrow_box_success">
-                    <h2>Тайник сделан!</h2>
+                    <h3>Тайник сделан!</h3>
                     <p>Вам нужно скопировать и отправить приведенное ниже сообщение человеку, которому вы хотите передать это тайник. Обратите внимание, для дополнительной безопасности отправьте пароль отдельно от ссылки.</p>
                 </div>
                 <div class="panel-body">
                     <div class="drop-complete">
-                        <p class="intro-text">
+                        <p class="lead">
                             Привет,<br />
                             Я посылаю вам некоторую защищенную информацию.<br />
                         </p>
@@ -131,7 +131,7 @@
 
             <div id="RetrieveDrop">
                 <div class="arrow_box arrow_box_info">
-                    <h2>Введите пароль</h2>
+                    <h3>Введите пароль</h3>
                     <p>Это сработает только один раз! Нажатие <strong>'Открыть тайник'</strong> удалит сообщение навсегда.</p>
                 </div>
                 <div class="panel-body">
@@ -144,7 +144,7 @@
 
             <div id="DisplayDrop">
                 <div class="alert-success arrow_box arrow_box_success">
-                    <h2>Успешно!</h2>
+                    <h3>Успешно!</h3>
                     <p>Ваше расшифрованное сообщение ниже. Это сообщение было удалено, вы не сможете восстановить его снова.</p>
                 </div>
                 <div class="panel-body">
@@ -156,7 +156,7 @@
 
 
             <br /><br />
-            <a href="#demo" data-toggle="collapse btn btn-info btn-lg">Это безопасно?</a>
+            <a href="#demo" data-toggle="collapse" class="btn btn-info btn-lg">Это безопасно?</a>
 
             <div id="demo" class="collapse">
                 <p>Вот почему сообщение в безопасности:</p>
@@ -171,7 +171,7 @@
                 </ul>
                 <p>Безопасность используемого шифрования обеспечивается механизмом Symmetric Encryption, разработанным в <a target="_blank" href="http://bitwiseshiftleft.github.io/sjcl/">Стэнфорде</a>.</p>
                 <p>Самая большая угроза, связанная с этим методом, заключается в том, что сообщение и пароль будут перехвачены и извлечены до того, как предполагаемый получатель сможет получить его. Следует помнить о том, как передаются получателю пароль и ссылка, в идеале их стоит отправлять отдельно.</p>
-                <h2>Что если это ложь?</h2>
+                <h3>Что если это ложь?</h3>
                 Ну что ж, код приложения опубликован на <a href="https://github.com/and-rom/dead-drop-python" target="_blank">github.com</a>
             </div>
             <!-- end 'is this safe' -->
