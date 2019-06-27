@@ -1,37 +1,3 @@
-
-html {
-    overflow-y: scroll;
-}
-
-body { 
-    font: 16px/1.4 'Muli', Arial, Helvetica, sans-serif;
-}
-
-/*#password, #message, #decrypted {
-    font-family: 'Courier New';
-}
-*/
-
-.logo_bar {
-    background-color: #333;
-}
-
-.logo {
-    padding: 0;
-    height: 34px;
-    width: auto;
-    margin: 2.25em 0 ;
-}
-
-.container { padding:0 1em; } 
-
-@media all and (min-width: 788px) {  
-
-    .container { padding:0 ; } 
-
-}
-
-
 .page-header {
     margin: auto auto 24px auto;
     border-bottom: none;
@@ -49,23 +15,11 @@ body {
         font-size: 28px;
     }
 
-
-#footer {
-    margin: 72px auto;
-    border-top: solid 2px #ddd;
-    padding: 16px 0px 0px 0px;
-}
-
 #DropComplete, #DisplayDrop, #RetrieveDrop {
     display: none;
 }
 
-a { 
-    color: #007dc4;
-    font-size: 20px;
-    font-weight: bold;
-}
-    a:hover, a:active, a:focus { color: #0ac5db; }
+a:hover, a:active, a:focus { color: #0ac5db; }
 
 pre {
     background-color: #ffffff;
@@ -177,15 +131,6 @@ textarea.input-lg { padding: 24px; }
     box-shadow:none;
     border: 4px solid #007dc4;
 }
-
-.btn-primary {
-    background: #007dc4;
-    border:none;
-    border-radius: 0;
-    font-size: 20px;
-    padding: 12px 24px 15px 24px;
-}
-.btn-primary:hover { background: #0ac5db; }
 
 
 #demo {

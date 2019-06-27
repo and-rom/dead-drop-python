@@ -156,7 +156,7 @@
 
 
             <br /><br />
-            <a href="#demo" data-toggle="collapse">Это безопасно?</a>
+            <a href="#demo" data-toggle="collapse btn btn-info btn-lg">Это безопасно?</a>
 
             <div id="demo" class="collapse">
                 <p>Вот почему сообщение в безопасности:</p>
@@ -180,12 +180,18 @@
     </div>
     <!-- end container -->
 
+    <!-- Begin footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">&copy; And Rom, 2015</p>
+      </div>
+    </footer><!-- End footer -->
+
     <!-- Bootstrap core JavaScript
-================================================== -->
+    ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{ url_for('send_js', path='jquery.min.js') }}"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="{{ url_for('send_js', path='bootstrap.min.js') }}"></script>
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <script src="{{ url_for('send_js', path='sjcl.js') }}"></script>
     <script src="{{ url_for('send_js', path='jquery.toast.min.js') }}"></script>
     <script>
