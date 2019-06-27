@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="Cache-Control" content="max-age=3600, must-revalidate">
-    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Cache-Control" content="max-age=3600, must-revalidate" />
+    <meta name="robots" content="noindex, nofollow" />
     <meta name="description" content="Позволяет создать одноразовую ссылку для безопасной отправки паролей или другой информации." />
-    <meta name="author" content="androm">
+    <meta name="author" content="androm" />
     <meta name="theme-color" content="#222222" />
 
-    <title>Отправить защищаемую информацию, пароли, ссылки, тайник</title>
+    <title>Одноразовый тайник - AndRom</title>
 
-    <link rel="icon" href="img/favicon.ico">
+    <link rel="icon" href="/img/favicon.ico">
     <!-- secure, password, encryption ->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -24,14 +24,16 @@
 
     <![endif]-->
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="{{ url_for('send_css', path='bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('send_css', path='jquery.toast.min.css') }}" />
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="{{ url_for('send_css', path='bootstrap-theme.min.css') }}" /><link rel="stylesheet" href="{{ url_for('send_css', path='deaddrop.css') }}" />
-    <link rel="shortcut icon" href="{{ url_for('send_images', path='Skull_big.jpg') }}">
+    <!-- Bootstrap theme CSS -->
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet" />
 
+    <!-- Custom styles for this template -->
+    <link href="/css/custom.css" rel="stylesheet" />
+    <link href="{{ url_for('send_css', path='deaddrop.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('send_css', path='jquery.toast.min.css') }}" rel="stylesheet" />
 
     <script>
         {% if id %}
@@ -42,15 +44,46 @@
 
 </head>
 <body>
-    <form>
-        <div class="container">
-            <div class=" page-header">
-                
-                <h1>Одноразовый тайник</h1>
-                <p class="intro-text">Нужно безопасно передать какую-то информацию? Пароль? Любовную записку? Хайку? Это то самое место.</p>
-            </div>
-            <!-- end header -->
 
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">AndRom</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Главная</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Сервисы <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="pwgen.html">Генератор паролей</a></li>
+                <li class="active"><a href="deaddrop/">Одноразовый тайник</a></li>
+                <li><a href="icecast.html">Сейчас играет...</a></li>
+                <li><a href="tpvs/">TPVS</a></li>
+            </ul>
+            <li><a href="about.html">Подробнее</a></li>
+            <li><a href="contact.html">Контакты</a></li>
+          </ul>
+          <p class="navbar-text navbar-right">Github <a href="https://github.com/and-rom" class="navbar-link"><img src="./img/GitHub-Mark-32px.png" heght="20px" width="20px">and-rom</a></p>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <!-- Begin page content -->
+    <div class="container">
+        <div class=" page-header">
+            <p class="intro-text">Нужно безопасно передать какую-то информацию? Это то самое место.</p>
+        </div>
+        <!-- end header -->
+
+        <form>
             <div id="MakeDrop">
                 <div class="arrow_box arrow_box_info">
                     <p>Введите сообщение, которое вы хотите кому-то отправить.</p>
@@ -142,12 +175,11 @@
                 Ну что ж, код приложения опубликован на <a href="https://github.com/and-rom/dead-drop-python" target="_blank">github.com</a>
             </div>
             <!-- end 'is this safe' -->
-            
+        
+        </form>
+    </div>
+    <!-- end container -->
 
-        </div>
-        <!-- end container -->
-    </form>
-..
     <!-- Bootstrap core JavaScript
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
