@@ -21,6 +21,7 @@
     padding: 16px;
     border-radius: 6px;
     background: #f4f4f4;
+    overflow-x: auto;
 }
 
 .warning {
