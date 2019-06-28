@@ -118,11 +118,11 @@
 .collapse.in{display:block}
 .collapsing{position:relative;height:0;overflow:hidden;-webkit-transition:height .35s ease;transition:height .35s ease}
 
-@media (min-width: 768px)
-.navbar-right {
-    margin-right: -15px !important;
+@media (min-width: 768px) {
+    .navbar-right {
+        margin-right: -15px !important;
+    }
 }
-
 .navbar-collapse {
     max-height: 340px;
     padding-right: 0;
