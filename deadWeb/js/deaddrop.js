@@ -13,6 +13,13 @@ function setDrop(path) {
 
     "use strict";
 
+    if($("#message").val().trim().length < 1) {
+    $('html, body').animate({
+                    scrollTop: $("#box_info").offset().top
+                }, 200);
+        return;
+    }
+
     var text = symmetricEncrypt();
 
     $.post(path, { data: text }, function (data) {
