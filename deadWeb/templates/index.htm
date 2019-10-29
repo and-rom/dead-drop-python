@@ -114,8 +114,8 @@
                                 Я посылаю вам некоторую защищенную информацию.<br />
                             </p>
                             <div class="well location-well">
-                                Ссылка:&nbsp;<span id="url"></span><br /><br />
-                                Пароль:&nbsp;<span id="pass"></span>
+                                Ссылка:&nbsp;<a id="url"></a><br /><br />
+                                Пароль:&nbsp;<samp id="pass"></samp>
                             </div>
 
                             <div class="alert alert-warning warning">
@@ -143,7 +143,7 @@
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <input type="text" id="password" class="form-control input-lg" placeholder="Введите свой пароль здесь" size="25" />
+                        <input type="password" id="password" class="form-control input-lg" placeholder="Введите свой пароль здесь" size="25" />
                     </div>
                 </div>
                 <button type="button" class="btn btn-lg btn-primary" onclick="getDrop('{{ url_for('drop') }}')">Открыть тайник</button>
