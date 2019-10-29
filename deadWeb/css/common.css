@@ -128,11 +128,6 @@ body {
     border-color: rgba(120, 120, 120, 0);
 }
 
-.panel-body {
-  padding-right: 0;
-  padding-left: 0;
-}
-
 #decrypted {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
