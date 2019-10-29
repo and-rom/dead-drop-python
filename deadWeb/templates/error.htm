@@ -24,13 +24,17 @@
 
     <![endif]-->
 
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('send_css', path='zenburn/bootstrap.min.css') }}" rel="stylesheet" />
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="{{ url_for('send_css', path='bootstrap.min.css') }}" />
+    <!-- Bootstrap theme CSS -->
+    <link href="{{ url_for('send_css', path='zenburn/bootstrap-theme.min.css') }}" rel="stylesheet" />
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="{{ url_for('send_css', path='bootstrap-theme.min.css') }}" /><link rel="stylesheet" href="{{ url_for('send_css', path='deaddrop.css') }}" />
-    <link rel="shortcut icon" href="{{ url_for('send_images', path='Skull_big.jpg') }}">
+    <!-- Custom styles for all themes -->
+    <link href="{{ url_for('send_css', path='common.css') }}" rel="stylesheet" />
+
+    <!-- Custom styles for this theme -->
+    <link href="{{ url_for('send_css', path='zenburn/custom.css') }}" rel="stylesheet" />
 
 </head>
 <body>
