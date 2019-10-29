@@ -89,11 +89,13 @@
 
         <form>
             <div id="MakeDrop">
-                <div id="box_info" class="arrow_box arrow_box_info">
-                    <p>Введите сообщение, которое вы хотите кому-то отправить.</p>
+                <div class="alert alert-info arrow_box arrow_box_info">
+                    <p class="lead">Введите сообщение, которое вы хотите кому-то отправить.</p>
                 </div>
-                <div class="panel-body">
-                    <textarea name="message" id="message" placeholder="Введите ваше сообщение" class="form-control input-lg" rows="11"></textarea>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <textarea name="message" id="message" placeholder="Введите ваше сообщение" class="form-control input-lg" rows="11"></textarea>
+                    </div>
                 </div>
                 <button type="button" class="btn btn-lg btn-primary" onclick="setDrop('{{ url_for('drop') }}')">Сделать тайник!</button>
             </div>
@@ -101,32 +103,34 @@
 
 
             <div id="DropComplete">
-                <div class="alert-success arrow_box arrow_box_success">
+                <div class="alert alert-success arrow_box arrow_box_success">
                     <h3>Тайник сделан!</h3>
-                    <p>Вам нужно скопировать и отправить приведенное ниже сообщение человеку, которому вы хотите передать это тайник. Обратите внимание, для дополнительной безопасности отправьте пароль отдельно от ссылки.</p>
+                    <p class="lead">Вам нужно скопировать и отправить приведенное ниже сообщение человеку, которому вы хотите передать это тайник. Обратите внимание, для дополнительной безопасности отправьте пароль отдельно от ссылки.</p>
                 </div>
-                <div class="panel-body">
-                    <div class="drop-complete">
-                        <p class="lead">
-                            Привет,<br />
-                            Я посылаю вам некоторую защищенную информацию.<br />
-                        </p>
-                        <div class="well location-well">
-                            Ссылка:&nbsp;<span id="url"></span><br /><br />        
-                            Пароль:&nbsp;<span id="pass"></span>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="drop-complete">
+                            <p class="lead">
+                                Привет,<br />
+                                Я посылаю вам некоторую защищенную информацию.<br />
+                            </p>
+                            <div class="well location-well">
+                                Ссылка:&nbsp;<span id="url"></span><br /><br />
+                                Пароль:&nbsp;<span id="pass"></span>
+                            </div>
+
+                            <div class="alert alert-warning warning">
+                                <p><strong>Предупреждение!</strong></p>
+                                <ul>
+                                    <li>Этот тайник будет работать ТОЛЬКО один раз, поэтому будьте осторожны с паролем и обязательно скопируйте данные немедленно.</li>
+                                    <li>После того, как вы его откроете, данные самоуничтожатся, и эта ссылка больше не будет работать.</li>
+                                    <li>Эта ссылка будет работать только в течение 24 часов, поэтому, пожалуйста, проверьте в ближайшее время.</li>
+                                </ul>
+                            </div>
+
                         </div>
 
-                        <div class="warning">
-                            <p>Предупреждение!</p>
-                            <ul>
-                                <li>Этот тайник будет работать ТОЛЬКО один раз, поэтому будьте осторожны с паролем и обязательно скопируйте данные немедленно.</li>
-                                <li>После того, как вы его откроете, данные самоуничтожатся, и эта ссылка больше не будет работать.</li>
-                                <li>Эта ссылка будет работать только в течение 24 часов, поэтому, пожалуйста, проверьте в ближайшее время.</li>
-                            </ul>
-                        </div>
-                            
                     </div>
-                    
                 </div>
                 <button type="button" class="btn btn-lg btn-primary" onclick="window.location.assign('{{ url_for('index') }}')">Сделать другой тайник</button>
             </div>
@@ -134,12 +138,14 @@
 
 
             <div id="RetrieveDrop">
-                <div class="arrow_box arrow_box_info">
+                <div class="alert alert-info arrow_box arrow_box_info">
                     <h3>Введите пароль</h3>
-                    <p>Это сработает только один раз! Нажатие <strong>'Открыть тайник'</strong> удалит сообщение навсегда.</p>
+                    <p class="lead">Это сработает только один раз! Нажатие <strong>'Открыть тайник'</strong> удалит сообщение навсегда.</p>
                 </div>
-                <div class="panel-body">
-                    <input type="text" id="password" class="form-control input-lg" placeholder="Введите свой пароль здесь" size="25" />
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <input type="text" id="password" class="form-control input-lg" placeholder="Введите свой пароль здесь" size="25" />
+                    </div>
                 </div>
                 <button type="button" class="btn btn-lg btn-primary" onclick="getDrop('{{ url_for('drop') }}')">Открыть тайник</button>
             </div>
@@ -147,12 +153,14 @@
 
 
             <div id="DisplayDrop">
-                <div class="alert-success arrow_box arrow_box_success">
+                <div class="alert alert-success arrow_box arrow_box_success">
                     <h3>Успешно!</h3>
-                    <p>Ваше расшифрованное сообщение ниже. Это сообщение было удалено, вы не сможете восстановить его снова.</p>
+                    <p class="lead">Ваше расшифрованное сообщение ниже. Это сообщение было удалено, вы не сможете восстановить его снова.</p>
                 </div>
-                <div class="panel-body">
-                    <pre id="decrypted" />
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <pre id="decrypted" />
+                    </div>
                 </div>
                 <button type="button" class="btn btn-lg btn-primary" onclick="window.location.assign('{{ url_for('index') }}')">Сделай свой собственный тайник</button>
             </div>
@@ -160,23 +168,24 @@
 
 
             <br /><br />
-            <a href="#demo" data-toggle="collapse" class="btn btn-info btn-lg">Это безопасно?</a>
+            <a href="#demo" data-toggle="collapse" class="btn btn-info btn-lg" aria-expanded="false" aria-controls="demo">Это безопасно?</a>
 
             <div id="demo" class="collapse">
-                <p>Вот почему сообщение в безопасности:</p>
-
-                <ul>
-                    <li>сообщение не передается незашифрованным</li>
-                    <li>сообщение не хранится в незашифрованном виде</li>
-                    <li>зашифрованное сообщение хранится в течение 24 часов, а затем удаляется</li>
-                    <li>как только сообщение получено, оно удаляется</li>
-                    <li>если при получении сообщения возникла проблема, включая неверный пароль, оно удаляется</li>
-                    <li>расшифровать сообщение на стороне сервера нет возможности, так как просто неизвестен пароль</li>
-                </ul>
-                <p>Безопасность используемого шифрования обеспечивается механизмом Symmetric Encryption, разработанным в <a target="_blank" href="http://bitwiseshiftleft.github.io/sjcl/">Стэнфорде</a>.</p>
-                <p>Самая большая угроза, связанная с этим методом, заключается в том, что сообщение и пароль будут перехвачены и извлечены до того, как предполагаемый получатель сможет получить его. Следует помнить о том, как передаются получателю пароль и ссылка, в идеале их стоит отправлять отдельно.</p>
-                <h3>Что если это ложь?</h3>
-                Ну что ж, код приложения опубликован на <a href="https://github.com/and-rom/dead-drop-python" target="_blank">github.com</a>
+                <div class="well">
+                    <p>Вот почему сообщение в безопасности:</p>
+                    <ul>
+                        <li>сообщение не передается незашифрованным</li>
+                        <li>сообщение не хранится в незашифрованном виде</li>
+                        <li>зашифрованное сообщение хранится в течение 24 часов, а затем удаляется</li>
+                        <li>как только сообщение получено, оно удаляется</li>
+                        <li>если при получении сообщения возникла проблема, включая неверный пароль, оно удаляется</li>
+                        <li>расшифровать сообщение на стороне сервера нет возможности, так как просто неизвестен пароль</li>
+                    </ul>
+                    <p>Безопасность используемого шифрования обеспечивается механизмом Symmetric Encryption, разработанным в <a target="_blank" href="http://bitwiseshiftleft.github.io/sjcl/">Стэнфорде</a>.</p>
+                    <p>Самая большая угроза, связанная с этим методом, заключается в том, что сообщение и пароль будут перехвачены и извлечены до того, как предполагаемый получатель сможет получить его. Следует помнить о том, как передаются получателю пароль и ссылка, в идеале их стоит отправлять отдельно.</p>
+                    <h3>Что если это ложь?</h3>
+                    Ну что ж, код приложения опубликован на <a href="https://github.com/and-rom/dead-drop-python" target="_blank">github.com</a>
+                </div>
             </div>
             <!-- end 'is this safe' -->
         

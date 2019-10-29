@@ -15,7 +15,7 @@ function setDrop(path) {
 
     if($("#message").val().trim().length < 1) {
     $('html, body').animate({
-                    scrollTop: $("#box_info").offset().top
+                    scrollTop: $("#MakeDrop").offset().top
                 }, 200);
         return;
     }
