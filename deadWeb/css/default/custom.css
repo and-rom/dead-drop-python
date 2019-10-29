@@ -22,9 +22,9 @@ body {
 -------------------------------------------------- */
 
 .arrow_box_success:after {
-    border-top-color: #c8e5bc;
+  border-top-color: #c8e5bc;
 }
 
 .arrow_box_info:after {
-    border-top-color: #b9def0;
+  border-top-color: #b9def0;
 }
