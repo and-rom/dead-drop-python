@@ -1,0 +1,82 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Fixed navbar */
+  padding-top: 70px;
+  /* Margin bottom by footer height */
+  margin-bottom: 25px;
+  /* Padding below the footer and lighter body text */
+  padding-bottom: 40px;
+}
+
+/* CUSTOM STYLES
+-------------------------------------------------- */
+
+/* Customize thr navbar
+-------------------------------------------------- */
+
+/* Navbar custom syles */
+.navbar-brand-text {
+  font-size: 18px;
+  line-height: 20px;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+
+/* Customize page
+-------------------------------------------------- */
+
+.row {
+  margin-bottom: 20px;
+}
+
+.container .text-muted {
+  margin-bottom: 0;
+  text-align: center;
+  padding-top: 3px;
+}
+
+/* Customize footer
+-------------------------------------------------- */
+
+/* Sticky footer styles */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 25px;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
