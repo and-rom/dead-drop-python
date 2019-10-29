@@ -137,11 +137,25 @@ p.demo-btn-p {
 }
 
 #decrypted {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   margin-bottom: 0;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;  
+  word-break: break-word;
 }
 
 #message {
   resize: none;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;  
+  word-break: break-word;
+  word-wrap: break-word;
 }
 
