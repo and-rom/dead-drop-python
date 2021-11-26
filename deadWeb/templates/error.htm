@@ -25,16 +25,19 @@
     <![endif]-->
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('send_css', path='zenburn/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('send_css', path='default/bootstrap.min.css') }}" rel="stylesheet" media="(prefers-color-scheme: light)" />
+    <link href="{{ url_for('send_css', path='zenburn/bootstrap.min.css') }}" rel="stylesheet" media="(prefers-color-scheme: dark)" />
 
     <!-- Bootstrap theme CSS -->
-    <link href="{{ url_for('send_css', path='zenburn/bootstrap-theme.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('send_css', path='default/bootstrap-theme.min.css') }}" rel="stylesheet" media="(prefers-color-scheme: light)" />
+    <link href="{{ url_for('send_css', path='zenburn/bootstrap-theme.min.css') }}" rel="stylesheet" media="(prefers-color-scheme: dark)" />
+
+    <!-- Custom styles for this theme -->
+    <link href="{{ url_for('send_css', path='default/custom.css') }}" rel="stylesheet" media="(prefers-color-scheme: light)" />
+    <link href="{{ url_for('send_css', path='zenburn/custom.css') }}" rel="stylesheet" media="(prefers-color-scheme: dark)" />
 
     <!-- Custom styles for all themes -->
     <link href="{{ url_for('send_css', path='common.css') }}" rel="stylesheet" />
-
-    <!-- Custom styles for this theme -->
-    <link href="{{ url_for('send_css', path='zenburn/custom.css') }}" rel="stylesheet" />
 
 </head>
 <body>
